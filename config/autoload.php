@@ -16,6 +16,9 @@ ClassLoader::addClasses(array
 (
 	// Modules
 	'ByteSolution\ModuleMovieList'  => 'system/modules/zbs_cinema/modules/ModuleMovieList.php',
+    
+	// Models
+	'ByteSolution\MovieModel' => 'system/modules/zbs_cinema/models/MovieModel.php',
 ));
 
 

@@ -14,7 +14,8 @@ class ModuleMovieList extends \Module
 	return parent::generate();
     }
     protected function compile() {
-	$this->Template->test = "test";
+	$objMovie = \MovieModel::findByPk(2);
+	$this->Template->movie = $objMovie;
     }
 
     
