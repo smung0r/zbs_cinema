@@ -48,6 +48,27 @@ $GLOBALS['TL_DCA']['tl_zbs_cinema_movies'] = array
 	    'eval'                    => array('mandatory'=>true, 'maxlength'=>255),
 	    'sql'                     => "varchar(255) NOT NULL default ''"
 	),
+	'date' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_zbs_cinema_movies']['date'],
+			'default'                 => time(),
+			'exclude'                 => true,
+			'filter'                  => true,
+			'sorting'                 => true,
+			'flag'                    => 8,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'date', 'doNotCopy'=>true, 'datepicker'=>true, 'tl_class'=>''),
+			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+		),
+	'description' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_zbs_cinema_movies']['description'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'textarea',
+			'eval'                    => array('rte'=>'tinyMCE', 'tl_class'=>'clr'),
+			'sql'                     => "text NULL"
+		),
     ),
     'list' => array
 	(
@@ -99,6 +120,6 @@ $GLOBALS['TL_DCA']['tl_zbs_cinema_movies'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{title_legend},headline'
+		'default'                     => '{title_legend},headline,date,description'
 	),
 );
