@@ -48,5 +48,57 @@ $GLOBALS['TL_DCA']['tl_zbs_cinema_movies'] = array
 	    'eval'                    => array('mandatory'=>true, 'maxlength'=>255),
 	    'sql'                     => "varchar(255) NOT NULL default ''"
 	),
-    )
+    ),
+    'list' => array
+	(
+		'sorting' => array
+		(
+			'mode'                    => 0,
+			'fields'                  => array('headline'),
+			'panelLayout'             => 'filter;sort,search,limit',
+		),
+		'label' => array
+		(
+			'fields'                  => array('headline'),
+			'format'                  => '%s'
+		),
+		'global_operations' => array
+		(
+			'all' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
+				'href'                => 'act=select',
+				'class'               => 'header_edit_all',
+				'attributes'          => 'onclick="Backend.getScrollOffset()" accesskey="e"'
+			)
+		),
+		'operations' => array
+		(
+			'edit' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_news']['edit'],
+				'href'                => 'act=edit',
+				'icon'                => 'edit.gif'
+			),
+			'copy' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_news']['copy'],
+				'href'                => 'act=copy',
+				'icon'                => 'copy.gif'
+			),
+			'delete' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_news']['delete'],
+				'href'                => 'act=delete',
+				'icon'                => 'delete.gif',
+				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
+			),
+			
+		)
+	),
+	// Palettes
+	'palettes' => array
+	(
+		'default'                     => '{title_legend},headline'
+	),
 );

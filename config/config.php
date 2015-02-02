@@ -12,7 +12,14 @@
 /**
  * Back end modules
  */
-
+array_insert($GLOBALS['BE_MOD']['content'], 2, array
+(
+	'tl_zbs_cinema_movies' => array
+	(
+		'tables' => array('tl_zbs_cinema_movies'),
+		'icon'   => 'system/modules/faq/assets/icon.gif'
+	)
+));
 
 /**
  * Front end modules
